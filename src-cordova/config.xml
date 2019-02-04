@@ -24,4 +24,5 @@
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-battery-status" spec="^2.0.2" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-datecs-printer" spec="^0.9.0" />
 </widget>

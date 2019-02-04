@@ -13,13 +13,15 @@
         "cordova-android": "^7.0.0",
         "cordova-plugin-battery-status": "^2.0.2",
         "cordova-plugin-camera": "^4.0.3",
+        "cordova-plugin-datecs-printer": "^0.9.0",
         "cordova-plugin-whitelist": "^1.3.3"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
             "cordova-plugin-battery-status": {},
-            "cordova-plugin-camera": {}
+            "cordova-plugin-camera": {},
+            "cordova-plugin-datecs-printer": {}
         },
         "platforms": [
             "android"

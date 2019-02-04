@@ -45,6 +45,10 @@
           <q-item-side icon="camera" />
           <q-item-main label="Camera" sublabel="Camera test" />
         </q-item>
+        <q-item @click.native="$router.push('/escposprinter')">
+          <q-item-side icon="print" />
+          <q-item-main label="Printer" sublabel="Bluetooth ESC/POS Printer" />
+        </q-item>
         <q-item @click.native="openURL('http://quasar-framework.org')">
           <q-item-side icon="school" />
           <q-item-main label="Docs" sublabel="quasar-framework.org" />

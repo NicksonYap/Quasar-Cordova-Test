@@ -41,6 +41,10 @@
           <q-item-side icon="battery_unknown" />
           <q-item-main label="Battery" sublabel="Battery info" />
         </q-item>
+        <q-item @click.native="$router.push('/camera')">
+          <q-item-side icon="camera" />
+          <q-item-main label="Camera" sublabel="Camera test" />
+        </q-item>
         <q-item @click.native="openURL('http://quasar-framework.org')">
           <q-item-side icon="school" />
           <q-item-main label="Docs" sublabel="quasar-framework.org" />

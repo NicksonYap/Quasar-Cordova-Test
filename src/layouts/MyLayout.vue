@@ -33,6 +33,14 @@
         inset-delimiter
       >
         <q-list-header>Essential Links</q-list-header>
+        <q-item @click.native="$router.push('/')">
+          <q-item-side icon="home" />
+          <q-item-main label="Index" sublabel="Home page" />
+        </q-item>
+        <q-item @click.native="$router.push('/battery')">
+          <q-item-side icon="battery_unknown" />
+          <q-item-main label="Battery" sublabel="Battery info" />
+        </q-item>
         <q-item @click.native="openURL('http://quasar-framework.org')">
           <q-item-side icon="school" />
           <q-item-main label="Docs" sublabel="quasar-framework.org" />

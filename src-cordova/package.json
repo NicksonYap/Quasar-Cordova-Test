@@ -11,6 +11,7 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-android": "^7.0.0",
+        "cordova-android-support-gradle-release": "^2.0.1",
         "cordova-plugin-battery-status": "^2.0.2",
         "cordova-plugin-camera": "^4.0.3",
         "cordova-plugin-datecs-printer": "^0.9.0",
@@ -21,7 +22,10 @@
             "cordova-plugin-whitelist": {},
             "cordova-plugin-battery-status": {},
             "cordova-plugin-camera": {},
-            "cordova-plugin-datecs-printer": {}
+            "cordova-plugin-datecs-printer": {},
+            "cordova-android-support-gradle-release": {
+                "ANDROID_SUPPORT_VERSION": "27.+"
+            }
         },
         "platforms": [
             "android"

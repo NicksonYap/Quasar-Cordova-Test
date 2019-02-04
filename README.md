@@ -1,1 +1,3 @@
-quasar_escpos
+# Quasar App
+
+> WIP

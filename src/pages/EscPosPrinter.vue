@@ -6,6 +6,13 @@
       label="List Paired Devices"
       @click="tryListPaired()"
     />
+    <q-btn
+      v-if="connected_device"
+      color="secondary"
+      icon="print"
+      label="Print"
+      @click="print(connected_device)"
+    />
     <q-table v-if="devices" title="Devices" :data="devices" :columns="columns" row-key="id">
       <!-- slot name syntax: body-cell-<column_name> -->
       <q-td slot="body-cell-connect" slot-scope="props" :props="props">
@@ -18,10 +25,13 @@
 </template>
 
 <script>
+import Escpos from 'escpos-commands/src/escpos';
+
 export default {
   data() {
     return {
       devices: null,
+      connected_device: null,
       columns: [
         {
           name: 'name',
@@ -56,14 +66,14 @@ export default {
           // on fail
           this.$q.notify({
             icon: 'bluetooth_disabled',
-            message: `Not Connected`,
+            message: `Bluetooth Disabled`,
             type: 'negative'
           });
           window.bluetoothSerial.enable(
             success => {
               this.$q.notify({
                 icon: 'bluetooth_connected',
-                message: `Connected`,
+                message: `Bluetooth Enabled`,
                 type: 'positive'
               });
               this.listPaired();
@@ -93,6 +103,7 @@ export default {
     tryConnect(device) {
       window.bluetoothSerial.disconnect(
         success => {
+          this.connected_device = null;
           this.connect(device);
           console.log('disconnect success');
           //   this.$q.notify('Disconnected');
@@ -102,16 +113,6 @@ export default {
           this.$q.notify(error);
         }
       );
-
-      /*  window.bluetoothSerial.isConnected(
-        success => {
-          this.$q.notify('Already connected');
-        },
-        error => {
-          this.$q.notify(error);
-          this.connect(device);
-        }
-      ); */
     },
     connect(device) {
       let device_id = device.id;
@@ -126,6 +127,7 @@ export default {
       window.bluetoothSerial.connect(
         device_id,
         success => {
+          this.connected_device = device;
           this.$q.notify({
             icon: 'bluetooth_connected',
             message: `Connected to ${device_name}`,
@@ -136,6 +138,53 @@ export default {
           this.$q.notify({
             icon: 'bluetooth_disabled',
             message: `Unable to connect to ${device_name}`,
+            type: 'negative'
+          });
+        }
+      );
+    },
+    print() {
+      window.bluetoothSerial.isConnected(
+        success => {
+          //already connected
+
+          let uint8array = new Escpos()
+            .init()
+            .align('ct')
+            .boldOn()
+            .text('Testing')
+            .boldOff()
+            .feed(1)
+            .qrcode('test')
+            .feed(1)
+            .cut();
+
+          console.log('print:', uint8array);
+          window.bluetoothSerial.write(
+            uint8array.buffer,
+            success => {
+              console.log(success);
+              this.$q.notify({
+                icon: 'print',
+                message: `Printing`,
+                type: 'info'
+              });
+            },
+            error => {
+              //doesn't report error no matter what
+              this.$q.notify({
+                icon: 'print',
+                message: `Failed: ${error}`,
+                type: 'negative'
+              });
+            }
+          );
+        },
+        error => {
+          //not connected
+          this.$q.notify({
+            icon: 'print',
+            message: `Not Connected`,
             type: 'negative'
           });
         }

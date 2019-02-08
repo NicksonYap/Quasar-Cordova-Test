@@ -7,7 +7,8 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'battery', component: () => import('pages/Battery.vue') },
       { path: 'camera', component: () => import('pages/Camera.vue') },
-      { path: 'escposprinter', component: () => import('pages/EscPosPrinter.vue') }
+      { path: 'esc_pos_printer', component: () => import('pages/EscPosPrinter.vue') },
+      { path: 'barcode_scanner', component: () => import('pages/BarcodeScanner.vue') }
     ]
   }
 ]

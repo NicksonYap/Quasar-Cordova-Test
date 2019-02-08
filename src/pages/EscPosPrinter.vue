@@ -42,8 +42,8 @@ export default {
         },
         {
           name: 'id',
-          label: 'ID',
           field: 'id',
+          label: 'ID',
           align: 'left',
           sortable: true
         },

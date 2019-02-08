@@ -1,6 +1,6 @@
 {
-    "name": "com.seamlesshq.quasar_escpos",
-    "displayName": "Quasar ESC/POS",
+    "name": "com.seamlesshq.quasar_cordova_test",
+    "displayName": "Quasar Cordova Test",
     "version": "1.0.0",
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",

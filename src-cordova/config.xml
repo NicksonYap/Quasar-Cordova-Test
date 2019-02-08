@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.seamlesshq.quasar_escpos" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Quasar ESC/POS</name>
-    <description>Testing ESC/POS on Quasar (Cordova)</description>
+<widget id="com.seamlesshq.quasar_cordova_test" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Quasar Cordova Test</name>
+    <description>Tests on Quasar (Cordova)</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>

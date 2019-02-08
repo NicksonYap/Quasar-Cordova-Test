@@ -1,9 +1,9 @@
 {
-  "name": "quasar_escpos",
+  "name": "quasar_cordova_test",
   "version": "0.0.1",
-  "description": "Testing ESC/POS on Quasar (Cordova)",
-  "productName": "Quasar ESC/POS",
-  "cordovaId": "com.seamlesshq.quasar_escpos",
+  "description": "Tests on Quasar (Cordova)",
+  "productName": "Quasar Cordova Test",
+  "cordovaId": "com.seamlesshq.quasar_cordova_test",
   "author": "hi@nickson.me",
   "private": true,
   "scripts": {

@@ -51,7 +51,11 @@
         </q-item>
         <q-item @click.native="$router.push('/barcode_scanner')">
           <q-item-side icon="fullscreen" />
-          <q-item-main label="Barcode Scanner" sublabel="QR Code, Barcode, etc" />
+          <q-item-main label="Barcode Scanner" sublabel="Simple QR Code, Barcode Scanner" />
+        </q-item>
+        <q-item @click.native="$router.push('/mw_barcode_scanner')">
+          <q-item-side icon="fullscreen" />
+          <q-item-main label="MW Barcode Scanner" sublabel="Robust QR Code, Barcode Scanner" />
         </q-item>
         <q-item @click.native="openURL('http://quasar-framework.org')">
           <q-item-side icon="school" />

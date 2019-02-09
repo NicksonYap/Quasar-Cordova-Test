@@ -19,7 +19,13 @@
       style="overflow:hidden"
     />
     <br>
-    <q-table v-if="scan_results" title="Scan Results" :data="scan_results" :columns="columns"></q-table>
+    <q-table
+      v-if="scan_results"
+      title="Scan Results"
+      :data="scan_results"
+      :columns="columns"
+      :pagination.sync="pagination"
+    ></q-table>
   </q-page>
 </template>
 
@@ -64,6 +70,14 @@ export default {
       ],
       columns: [
         {
+          name: 'index',
+          label: 'No.',
+          align: 'right',
+          field: row => row.__index,
+          format: val => val + 1,
+          sortable: true
+        },
+        {
           name: 'text',
           field: 'text',
           label: 'Text',
@@ -77,7 +91,12 @@ export default {
           align: 'left',
           sortable: true
         }
-      ]
+      ],
+
+      pagination: {
+        sortBy: 'index', // String, column "name" property value
+        descending: true
+      }
     };
   },
   methods: {

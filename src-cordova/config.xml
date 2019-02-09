@@ -47,4 +47,5 @@
     </plugin>
     <engine name="android" spec="^7.0.0" />
     <engine name="ios" spec="^4.5.5" />
+    <plugin name="manateeworks-barcodescanner-v3" spec="^3.0.52" />
 </widget>

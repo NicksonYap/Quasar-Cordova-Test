@@ -16,7 +16,10 @@
         "cordova-plugin-battery-status": "^2.0.2",
         "cordova-plugin-bluetooth-serial": "^0.4.7",
         "cordova-plugin-camera": "^4.0.3",
+        "cordova-plugin-device": "^2.0.2",
+        "cordova-plugin-dialogs": "^2.0.1",
         "cordova-plugin-whitelist": "^1.3.3",
+        "manateeworks-barcodescanner-v3": "^3.0.52",
         "phonegap-plugin-barcodescanner": "^8.0.1"
     },
     "cordova": {
@@ -30,7 +33,8 @@
             "cordova-plugin-bluetooth-serial": {},
             "phonegap-plugin-barcodescanner": {
                 "ANDROID_SUPPORT_V4_VERSION": "27.+"
-            }
+            },
+            "manateeworks-barcodescanner-v3": {}
         },
         "platforms": [
             "android",

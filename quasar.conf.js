@@ -40,6 +40,11 @@ module.exports = function (ctx) {
     },
     // framework: 'all' --- includes everything; for dev only!
     framework: {
+      config: {
+        cordova: {
+          backButtonExit: false
+        }
+      },
       components: [
         'QLayout',
         'QLayoutHeader',

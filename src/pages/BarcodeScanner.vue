@@ -27,6 +27,7 @@
 export default {
   data() {
     return {
+      scan_properly_cancelled: true,
       torch_on: false,
       scan_results: [],
       format_selection: ['QR_CODE', 'DATA_MATRIX', 'EAN_13', 'PDF_417'],
@@ -92,9 +93,12 @@ export default {
 
       console.log(this.format_selection.join());
 
+      this.scan_properly_cancelled = false;
+
       cordova.plugins.barcodeScanner.scan(
         result => {
-          if (!result.cancelled) {
+          if (result.cancelled == false) {
+            this.scan_properly_cancelled = true;
             this.$q.notify({
               icon: 'fullscreen',
               message: `Scanned: ${result.text}`,
@@ -113,6 +117,7 @@ export default {
         },
         error => {
           // on fail
+          this.scan_properly_cancelled = true;
           this.$q.notify(error);
         },
         {
@@ -133,6 +138,18 @@ export default {
         }
       );
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    // called when the route that renders this component is about to
+    // be navigated away from.
+    // has access to `this` component instance.
+
+    if (this.scan_properly_cancelled) {
+      next();
+    } else {
+      next(false);
+    }
+    this.scan_properly_cancelled = true;
   }
 };
 </script>

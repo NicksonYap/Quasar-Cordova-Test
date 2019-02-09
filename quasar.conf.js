@@ -56,7 +56,9 @@ module.exports = function (ctx) {
         'QItemMain',
         'QItemSide',
         'QTable',
-        'QTd'
+        'QTd',
+        'QSelect',
+        'QToggle'
       ],
       directives: [
         'Ripple'
